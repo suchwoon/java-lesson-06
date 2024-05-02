@@ -6,8 +6,8 @@ package kr.easw.lesson06;
  * Vehicle 클래스를 참고하여, Car, Bicycle, Motorcycle 클래스를 구현하도록 만들어보세요.
  * 해당 예제는 의도적으로 오류가 발생하도록 구성되었으며, Vehicle을 상속하지 않은 클래스는 오류가 발생합니다.
  */
-public class AbstractionExample {
 
+public class AbstractionExample {
     public static void main(String[] args) {
         new Car("Car").run();
         new Bicycle("Bicycle").run();
@@ -45,12 +45,25 @@ public class AbstractionExample {
         }
     }
 
+    static class Bicycle extends Vehicle {
+        public Bicycle(String name) {
+            super(name);
+        }
 
-    static class Bicycle {
-
+        @Override
+        public void run() {
+            System.out.println("Bicycle is running!");
+        }
     }
 
-    static class Motorcycle {
+    static class Motorcycle extends Vehicle {
+        public Motorcycle(String name) {
+            super(name);
+        }
 
+        @Override
+        public void run() {
+            System.out.println("Motorcycle is running!");
+        }
     }
 }
