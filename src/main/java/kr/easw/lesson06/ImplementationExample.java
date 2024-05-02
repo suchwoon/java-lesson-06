@@ -7,7 +7,6 @@ package kr.easw.lesson06;
  * 해당 예제는 의도적으로 오류가 발생하도록 구성되었으며, Animal을 구현하지 않은 클래스는 오류가 발생합니다.
  */
 public class ImplementationExample {
-
     public static void main(String[] args) {
         new Dog().speak();
         new Cat().speak();
@@ -40,16 +39,25 @@ public class ImplementationExample {
         }
     }
 
-
-    static class Cat {
+    static class Cat implements Animal {
         private void meow() {
             System.out.println("Meow!");
         }
+
+        @Override
+        public void speak() {
+            meow();
+        }
     }
 
-    static class Horse {
+    static class Horse implements Animal {
         private void neigh() {
             System.out.println("Neigh!");
+        }
+
+        @Override
+        public void speak() {
+            neigh();
         }
     }
 }
